@@ -4,6 +4,34 @@ lazy val dispatchV = "0.12.0"
 lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 
 lazy val root = (project in file(".")).
+
+  sonatypeProfileName := "net.sigmalab"
+
+  pomExtra in Global := {
+    <url>https://github.com/schrepfler/sportsml-scala</url>
+    <!-- License of your choice -->
+    <licenses>
+      <license>
+        <name>Apache 2</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      </license>
+    </licenses>
+    <!-- SCM information. Modify the following URLs -->
+    <scm>
+      <connection>scm:git:github.com/schrepfler/sportsml-scala</connection>
+      <developerConnection>scm:git:git@github.com:schrepfler/sportsml-scala.git</developerConnection>
+      <url>github.com/schrepfler/sportsml-scala</url>
+    </scm>
+    <!-- Developer contact information -->
+    <developers>
+      <developer>
+        <id>schrepfler</id>
+        <name>Srdan Srepfler</name>
+        <url>github.com/schrepfler</url>
+      </developer>
+    </developers>
+  }
+
   // enablePlugins(ScalaxbPlugin).
   settings(inThisBuild(List(
     organization  := "net.sigmalab",
