@@ -1,10 +1,10 @@
-lazy val scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.2"
-lazy val scalaParser = "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.1"
-lazy val dispatchV = "0.11.3"
+lazy val scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
+lazy val scalaParser = "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.6"
+lazy val dispatchV = "0.12.0"
 lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 
 lazy val root = (project in file(".")).
-  enablePlugins(ScalaxbPlugin).
+  // enablePlugins(ScalaxbPlugin).
   settings(inThisBuild(List(
     organization  := "com.example",
     scalaVersion  := "2.12.2"
@@ -17,7 +17,7 @@ lazy val root = (project in file(".")).
       else Seq(scalaXml, scalaParser)
     }).
   settings(
-    // scalaxbDispatchVersion in (Compile, scalaxb) := dispatchV,
+    // scalaxbDispatchVersion in (Compile, scalaxb) := dispatchV
     // scalaxbPackageName in (Compile, scalaxb)     := "org.iptc.sportsml.v3"
     // scalaxbPackageNames in (Compile, scalaxb)    := Map(uri("http://schemas.microsoft.com/2003/10/Serialization/") -> "microsoft.serialization"),
     // logLevel in (Compile, scalaxb) := Level.Debug
