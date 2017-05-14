@@ -3,32 +3,31 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML MotorRacing plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML MotorRacing plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema 
-	xmlns="http://iptc.org/std/nar/2006-10-01/" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Motor racing metadata complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Motor racing metadata complex types               -->
+	<!-- ========================================================================================= -->
+
 		<xs:complexType name="motorRacingEventMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Metadata about the event itself. | Includes what state the game is in.</xs:documentation>
 			</xs:annotation>
 			<xs:attributeGroup ref="eventStateMotorRacing"/>
 		</xs:complexType>
-	
+
 		<xs:complexType name="motorRacingTeamMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Metadata about the team. | Specific to the sport of motor racing.</xs:documentation>
@@ -69,7 +68,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 						<xs:documentation>A display-name for the make-key.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				
+
 			</xs:sequence>
 			<xs:attributeGroup ref="commonAttributes"/>
 			<xs:attribute name="number" type="xs:string" use="optional">
@@ -105,10 +104,10 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 		</xs:complexType>
 
 	<!-- ========================================================================================= -->
-	<!--        Motor Racing stats complex types               -->	
-	<!-- ========================================================================================= -->	
+	<!--        Motor Racing stats complex types               -->
+	<!-- ========================================================================================= -->
 
-	
+
 		<xs:complexType name="motorRacingTeamStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Specific statistics for motor racing. | Includes stats about the qualifying round, as well as for the race itself.</xs:documentation>
@@ -117,7 +116,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				<xs:extension base="baseMotorRacingPlayerStatsComplexType"></xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 	<xs:complexType name="motorRacingPlayerStatsComplexType">
 		<xs:annotation>
 			<xs:documentation>Specific statistics for motor racing. | Includes stats about the qualifying round, as well as for the race itself.</xs:documentation>
@@ -126,7 +125,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			<xs:extension base="baseMotorRacingPlayerStatsComplexType"></xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
+
 	<xs:complexType name="baseMotorRacingPlayerStatsComplexType">
 		<xs:annotation>
 			<xs:documentation>Specific statistics for motor racing. | Includes stats about the qualifying round, as well as for the race itself.</xs:documentation>
@@ -138,9 +137,9 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 		<xs:attributeGroup ref="commonAttributes"/>
 		<xs:attributeGroup ref="coverageAttributes"/>
 	</xs:complexType>
-	
-	
-	
+
+
+
 	<xs:complexType name="motorRacingEventStatsComplexType">
 		<xs:annotation>
 			<xs:documentation>Statistics about the event itself. | Includes the total number of lead changes, and the average speed.</xs:documentation>
@@ -203,7 +202,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	
+
 	<xs:complexType name="motorRacingStatsQualifyingComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics for the qualifying round of a race. | Includes pole position and qualifying times.</xs:documentation>
@@ -246,7 +245,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="motorRacingStatsRaceComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics for the race itself. | Includes time information and can include cumulative stats for the driver or team.</xs:documentation>
@@ -392,7 +391,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="motorRacingStatsLapComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics for a particular lap. | Can be used for all laps in a race, or just say for the fastest lap.</xs:documentation>
@@ -435,10 +434,10 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Motor Racing Attribute groups               -->	
-	<!-- ========================================================================================= -->	
+	<!--        Motor Racing Attribute groups               -->
+	<!-- ========================================================================================= -->
 
 	<xs:attributeGroup name="eventStateMotorRacing">
 		<xs:attribute name="lap" type="xs:string" use="optional">
@@ -462,6 +461,6 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			</xs:annotation>
 		</xs:attribute>
 	</xs:attributeGroup>
-	
+
 
 </xs:schema>

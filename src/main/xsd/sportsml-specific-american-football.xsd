@@ -3,7 +3,7 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 
 -->
@@ -43,18 +43,18 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML American Fotball plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML American Fotball plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema xmlns="http://iptc.org/std/nar/2006-10-01/" 
+<xs:schema 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
-	
+
 	<!-- ========================================================================================= -->
-	<!--        American Fotball metadata complex types               -->	
-	<!-- ========================================================================================= -->	
+	<!--        American Fotball metadata complex types               -->
+	<!-- ========================================================================================= -->
 
 		<xs:complexType name="americanFootballEventMetadataComplexType">
 			<xs:annotation>
@@ -68,11 +68,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 	<!-- ========================================================================================= -->
-	<!--        American Football Stats complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        American Football Stats complex types               -->
+	<!-- ========================================================================================= -->
+
 		<xs:complexType name="americanFootballPlayerStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Player statistics for football. | Includes the same elements as team statistics.</xs:documentation>
@@ -97,7 +97,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 		<xs:attributeGroup ref="commonAttributes"/>
 		<xs:attributeGroup ref="coverageAttributes"/>
 	</xs:complexType>
-	
+
 
 		<xs:complexType name="americanFootballTeamStatsComplexType">
 			<xs:annotation>
@@ -143,7 +143,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsOffensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team or player's offensive performance. | Further breaks down stats into passing, rushing, etc.</xs:documentation>
@@ -223,7 +223,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsPassingComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team or player's passing performance. | Used for quarterbacks and receivers.</xs:documentation>
@@ -391,7 +391,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsRushingComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team or player's rushing performance. | How well they ran with the ball.</xs:documentation>
@@ -459,7 +459,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsDownProgressComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team or player's performance on downs. | Covers first downs and conversions.</xs:documentation>
@@ -542,7 +542,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsSacksAgainstComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about the sacks suffered by the offensive team. | How many times and the team was sacked, and for how many yards.</xs:documentation>
@@ -570,7 +570,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsDefensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular player or team's defensive performance. | Covers tackles, interceptions, sacks.</xs:documentation>
@@ -720,7 +720,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsScoringComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team's scoring performance. | For touchdowns, field goals, etc.</xs:documentation>
@@ -871,7 +871,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsFieldGoalsComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about attempted and made field goals. | Allows for breakdowns between particular yard markers.</xs:documentation>
@@ -899,7 +899,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsSpecialTeamsComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about a particular team's special teams performance. | Covers punts, touchbacks.</xs:documentation>
@@ -1257,7 +1257,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsFumblesComplexType">
 			<xs:annotation>
 				<xs:documentation>For tracking fumble stats. | Covers teams that do the fumbling and the recovering.</xs:documentation>
@@ -1436,7 +1436,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="americanFootballStatsPenaltiesComplexType">
 			<xs:annotation>
 				<xs:documentation>Statistics about penalties. | Applies to both offensive and defensive penalties.</xs:documentation>
@@ -1484,11 +1484,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-		
-	
+
+
 	<!-- ========================================================================================= -->
-	<!--        American Football attribute groups complex types               -->	
-	<!-- ========================================================================================= -->	
+	<!--        American Football attribute groups complex types               -->
+	<!-- ========================================================================================= -->
 
 	<xs:attributeGroup name="eventStateAmericanFootball">
 		<xs:attribute name="clock-state" use="optional">
@@ -1543,5 +1543,5 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			</xs:annotation>
 		</xs:attribute>
 	</xs:attributeGroup>
-	
+
 </xs:schema>

@@ -3,24 +3,24 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML Rugby plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML Rugby plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema xmlns="http://iptc.org/std/nar/2006-10-01/" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Rugby metadata complex types               -->	
-	<!-- ========================================================================================= -->	
+	<!--        Rugby metadata complex types               -->
+	<!-- ========================================================================================= -->
 
 		<xs:complexType name="rugbyEventMetadataComplexType">
 			<xs:annotation>
@@ -35,7 +35,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="rugbyTimeAdjustmentComplexType">
 			<xs:annotation>
 				<xs:documentation>Record time added by referee. | Holds values for the time added by the referee and how much extra time was actually played.</xs:documentation>
@@ -46,25 +46,25 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 		<xs:complexType name="rugbyTeamMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Rugby specific metadata for one team. | The team-metadata that is specific for rugby and does not apply in all sports.</xs:documentation>
 			</xs:annotation>
 			<xs:attributeGroup ref="commonAttributes"/>
 		</xs:complexType>
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Soccer stats complex types               -->	
-	<!-- ========================================================================================= -->	
-	
-		<xs:complexType name="rugbyPlayerStatsComplexType"> 
+	<!--        Soccer stats complex types               -->
+	<!-- ========================================================================================= -->
+
+		<xs:complexType name="rugbyPlayerStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Player statistics that are specific to rugby. | Rugby specific statistic information about a player.</xs:documentation>
 			</xs:annotation>
 			<xs:complexContent>
 				<xs:extension base="baseRugbyStatsComplexType">
-					
+
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
@@ -75,11 +75,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			</xs:annotation>
 			<xs:complexContent>
 				<xs:extension base="baseRugbyStatsComplexType">
-					
+
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 	    <xs:complexType name="baseRugbyStatsComplexType">
 	    	<xs:sequence>
 	    		<xs:element name="stats-rugby-offensive" type="rugbyStatsOffensiveComplexType" minOccurs="0" maxOccurs="unbounded"/>
@@ -89,7 +89,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 	    	<xs:attributeGroup ref="commonAttributes"/>
 	    	<xs:attributeGroup ref="coverageAttributes"/>
 	    </xs:complexType>
-	
+
 		<xs:complexType name="rugbyStatsOffensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Offensive stats specific to rugby. | Offensive stats for one team, specific to rugby.</xs:documentation>
@@ -242,7 +242,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="rugbyStatsDefensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Defensive stats specific to rugby. | Defensive stats for one team, specific to rugby.</xs:documentation>
@@ -290,7 +290,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="rugbyStatsFoulComplexType">
 			<xs:annotation>
 				<xs:documentation>Stats specific to fauls, cautions, and ejections. | Could occur while players are on the offense, the defense, or even the bench.</xs:documentation>
@@ -333,5 +333,5 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 </xs:schema>

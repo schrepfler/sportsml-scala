@@ -3,29 +3,29 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 
 -->
 
-<!-- 
+<!--
 	* Changed batting- and throwing-hand to enumeration, not qcode
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML Baseball plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML Baseball plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema xmlns="http://iptc.org/std/nar/2006-10-01/" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Baseball metadata complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Baseball metadata complex types               -->
+	<!-- ========================================================================================= -->
+
 		<xs:complexType name="baseballEventMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Metadata about the event itself. | Includes what state the game is in.</xs:documentation>
@@ -33,7 +33,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 			<xs:attributeGroup ref="commonAttributes"/>
 			<xs:attributeGroup ref="eventStateBaseball"/>
 		</xs:complexType>
-	
+
 		<xs:complexType name="baseballTeamMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Metadata about the team. | Specific to the sport of baseball.</xs:documentation>
@@ -45,7 +45,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="baseballPlayerMetadataComplexType">
 			<xs:annotation>
 				<xs:documentation>Metadata about the player. | Specific to the sport of baseball.</xs:documentation>
@@ -62,11 +62,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Baseball Stats complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Baseball Stats complex types               -->
+	<!-- ========================================================================================= -->
+
 		<xs:complexType name="baseballPlayerStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Stats collected by a player. | Includes offensive, pitching, and defensive stats.</xs:documentation>
@@ -75,7 +75,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				<xs:extension base="baseBaseballStatsComplexType"></xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 		<xs:complexType name="baseballTeamStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Specific statistics for baseball. | Includes offensive, pitching, and defensive stats.</xs:documentation>
@@ -84,7 +84,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				<xs:extension base="baseBaseballStatsComplexType"></xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 	<xs:complexType name="baseBaseballStatsComplexType">
 		<xs:annotation>
 			<xs:documentation>Specific statistics for baseball. | Includes offensive, pitching, and defensive stats.</xs:documentation>
@@ -97,8 +97,8 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 		<xs:attributeGroup ref="commonAttributes"/>
 		<xs:attributeGroup ref="coverageAttributes"/>
 	</xs:complexType>
-	
-	
+
+
 		<xs:complexType name="baseballStatsOffensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Stats accumulated while a team is at bat. | Includes hits and runs.</xs:documentation>
@@ -356,7 +356,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="baseballStatsPitchingComplexType">
 			<xs:annotation>
 				<xs:documentation>Stats accumulated while a team is pitching. | Includes strikeouts and shutouts.</xs:documentation>
@@ -628,7 +628,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="baseballStatsDefensiveComplexType">
 			<xs:annotation>
 				<xs:documentation>Stats accumulated while a team is out in the field. | Includes double-plays and errors.</xs:documentation>
@@ -711,11 +711,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Baseball attribute groups complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Baseball attribute groups complex types               -->
+	<!-- ========================================================================================= -->
+
 	<xs:attributeGroup name="eventStateBaseball">
 		<xs:attribute name="inning-value" type="xs:string" use="optional">
 			<xs:annotation>

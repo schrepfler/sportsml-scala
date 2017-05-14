@@ -3,26 +3,26 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML Basketball plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML Basketball plugin               -->
+<!-- ========================================================================================= -->
 
 
-<xs:schema xmlns="http://iptc.org/std/nar/2006-10-01/" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
-	
+
 	<!-- ========================================================================================= -->
-	<!--        Basketball Stats complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Basketball Stats complex types               -->
+	<!-- ========================================================================================= -->
+
 		<xs:complexType name="basketballPlayerStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Specific statistics for basketball players. | Includes offensive, rebounding, and defensive stats.</xs:documentation>
@@ -64,11 +64,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 					<xs:documentation>A double digit number in any three of these categories: points, rebounds, assists, steals, and blocked shots.</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-            		
+
             	</xs:extension>
             </xs:complexContent>
 		</xs:complexType>
-	
+
 		<xs:complexType name="basketballTeamStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Specific statistics for basketball. | Includes offensive, rebounding, and defensive stats.</xs:documentation>
@@ -95,11 +95,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 					<xs:documentation>Turnover margain is the number of turnovers made by this team minus the number of turnovers made by the opposing team.</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-					
+
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-	
+
 	<xs:complexType name="baseBasketballStatsComplexType">
 		<xs:sequence>
 			<xs:element name="stats-basketball-offensive" type="basketballStatsOffensiveComplexType" minOccurs="0" maxOccurs="unbounded"/>

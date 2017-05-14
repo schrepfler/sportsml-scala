@@ -3,25 +3,24 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML Volleyball plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML Volleyball plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema 
-	xmlns="http://iptc.org/std/nar/2006-10-01/" 
-	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
 	version="3.0">
 
 	<!-- ========================================================================================= -->
-	<!--        Volleyball Stats complex types               -->	
-	<!-- ========================================================================================= -->	
-	
+	<!--        Volleyball Stats complex types               -->
+	<!-- ========================================================================================= -->
+
 	<xs:complexType name="volleyballTeamStatsComplexType">
 			<xs:annotation>
 				<xs:documentation>Volleyball specific stats for one team. | Team-stats that are specific to volleyball and does not apply to all sports.</xs:documentation>
@@ -57,7 +56,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 		<xs:complexType name="volleyballStatsAttacksComplexType">
 			<xs:annotation>
 				<xs:documentation>Attack stats specific to volleyball.</xs:documentation>
@@ -316,5 +315,5 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	
+
 </xs:schema>

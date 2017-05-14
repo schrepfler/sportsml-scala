@@ -3,31 +3,30 @@
 IPTC - International Press Telecommunications Council
 25 Southampton Buildings, London WC2A 1AL, United Kingdom
 www.iptc.org
-This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/. 
+This document is published under the Creative Commons Attribution 4.0 license - see the full license agreement at http://creativecommons.org/licenses/by/4.0/.
 By obtaining, using and/or copying this document, you (the licensee) agree that you have read, understood, and will comply with the terms and conditions of the license.
-		
+
 
 -->
 
 <!-- ========================================================================================= -->
-<!--        SportsML Soccer plugin               -->	
-<!-- ========================================================================================= -->	
+<!--        SportsML Soccer plugin               -->
+<!-- ========================================================================================= -->
 
-<xs:schema 
-    xmlns="http://iptc.org/std/nar/2006-10-01/" 
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    elementFormDefault="qualified" 
-    attributeFormDefault="unqualified" 
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
     version="3.0">
-    
+
     <xs:annotation>
         <xs:documentation>Tennis scoring: A game is a subpart of a set and a tennis match is played in best of 3 or 5 sets. A set is played within matches and you need 6 games to win the set. Sets are won by two games unless games are tied 6-6, in which case a tie-breaker ensues with the set won 7-6. The tie-break is counted point by point and is won at 7 by a two-point margin. Play will continue past 7 until that margin is achieved. In games the count proceeds from "love" (0) to 15, 30 and 40, after which the game must be won. If it is not 40-40, the player winning the next point has an "advantage" and if winning the next point too it means winning the game. Otherwise it is back to 40-40 and a continued play for advantage followed by a second winning point to win the game. A game won off an opponent's serve is called a break.</xs:documentation>
     </xs:annotation>
 
     <!-- ========================================================================================= -->
-    <!--        Tennis metadata complex types               -->	
-    <!-- ========================================================================================= -->	
-    
+    <!--        Tennis metadata complex types               -->
+    <!-- ========================================================================================= -->
+
         <xs:complexType name="tennisTournamentMetadataComplexType">
             <xs:annotation>
                 <xs:documentation>For holding metadata having to do with a tennis tournament. Includes an attribute for the name of the tennis tour.</xs:documentation>
@@ -54,11 +53,11 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
             </xs:attribute>
         </xs:complexType>
 
-    
+
     <!-- ========================================================================================= -->
-    <!--        Tennis Stats complex types               -->	
-    <!-- ========================================================================================= -->	
-    
+    <!--        Tennis Stats complex types               -->
+    <!-- ========================================================================================= -->
+
     <xs:complexType name="tennisPlayerStatsComplexType">
         <xs:annotation>
             <xs:documentation>Holds tennis-specific stats. Used for singles matches. | Generally having to do with the score of the match.</xs:documentation>
@@ -71,7 +70,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="tennisTeamStatsComplexType">
             <xs:annotation>
                 <xs:documentation>Holds tennis-specific stats. Used for doubles matches. | Generally having to do with the score of the match.</xs:documentation>
@@ -117,7 +116,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="tennisStatsGameComplexType">
         <xs:annotation>
             <xs:documentation>Holds the score of a game. | Also holds details of each point.</xs:documentation>
@@ -137,7 +136,7 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="baseTennisStatsComplexType">
         <xs:annotation>
             <xs:documentation>Basic elements and attributes for tennis statistics</xs:documentation>
@@ -348,13 +347,13 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
         </xs:complexType>
 
     <!-- ========================================================================================= -->
-    <!--        Tennis Attribute Groups               -->	
-    <!-- ========================================================================================= -->	
+    <!--        Tennis Attribute Groups               -->
+    <!-- ========================================================================================= -->
 
     <xs:annotation>
         <xs:documentation>Summary of statistcs used for tennis.</xs:documentation>
     </xs:annotation>
-    
+
     <xs:attributeGroup name="statsTennis">
         <xs:attribute name="net-points-won" type="xs:string" use="optional">
             <xs:annotation>
@@ -449,8 +448,8 @@ By obtaining, using and/or copying this document, you (the licensee) agree that 
             </xs:simpleType>
         </xs:attribute>
     </xs:attributeGroup>
-    
-    
+
+
     <!-- Vocabulary definitions for tennis schema -->
 
     <xs:simpleType name="gameResult.Tennis">
