@@ -6,7 +6,7 @@ lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 lazy val root = (project in file(".")).
   // enablePlugins(ScalaxbPlugin).
   settings(inThisBuild(List(
-    organization  := "com.example",
+    organization  := "net.sigmalab",
     scalaVersion  := "2.12.2"
   ))).
   settings(
