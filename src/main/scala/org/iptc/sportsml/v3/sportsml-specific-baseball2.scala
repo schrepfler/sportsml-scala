@@ -8,22 +8,22 @@ case class BaseballEventMetadataComplexType(attributes: Map[String, scalaxb.Data
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val inningu45value = attributes.get("@inning-value") map { _.as[String]}
-  lazy val inningu45half = attributes.get("@inning-half") map { _.as[Inningu45halfType]}
+  lazy val inningValue = attributes.get("@inning-value") map { _.as[String]}
+  lazy val inningHalf = attributes.get("@inning-half") map { _.as[InningHalfType]}
   lazy val outs = attributes.get("@outs") map { _.as[String]}
   lazy val balls = attributes.get("@balls") map { _.as[String]}
   lazy val strikes = attributes.get("@strikes") map { _.as[String]}
-  lazy val runneru45onu45first = attributes.get("@runner-on-first") map { _.as[String]}
-  lazy val runneru45onu45firstu45idref = attributes.get("@runner-on-first-idref") map { _.as[String]}
-  lazy val runneru45onu45second = attributes.get("@runner-on-second") map { _.as[String]}
-  lazy val runneru45onu45secondu45idref = attributes.get("@runner-on-second-idref") map { _.as[String]}
-  lazy val runneru45onu45third = attributes.get("@runner-on-third") map { _.as[String]}
-  lazy val runneru45onu45thirdu45idref = attributes.get("@runner-on-third-idref") map { _.as[String]}
-  lazy val runsu45thisu45inningu45half = attributes.get("@runs-this-inning-half") map { _.as[String]}
-  lazy val pitcheru45idref = attributes.get("@pitcher-idref") map { _.as[String]}
-  lazy val batteru45idref = attributes.get("@batter-idref") map { _.as[String]}
-  lazy val batteru45side = attributes.get("@batter-side") map { _.as[BodySideList]}
-  lazy val atu45batu45number = attributes.get("@at-bat-number") map { _.as[String]}
+  lazy val runnerOnFirst = attributes.get("@runner-on-first") map { _.as[String]}
+  lazy val runnerOnFirstIdref = attributes.get("@runner-on-first-idref") map { _.as[String]}
+  lazy val runnerOnSecond = attributes.get("@runner-on-second") map { _.as[String]}
+  lazy val runnerOnSecondIdref = attributes.get("@runner-on-second-idref") map { _.as[String]}
+  lazy val runnerOnThird = attributes.get("@runner-on-third") map { _.as[String]}
+  lazy val runnerOnThirdIdref = attributes.get("@runner-on-third-idref") map { _.as[String]}
+  lazy val runsThisInningHalf = attributes.get("@runs-this-inning-half") map { _.as[String]}
+  lazy val pitcherIdref = attributes.get("@pitcher-idref") map { _.as[String]}
+  lazy val batterIdref = attributes.get("@batter-idref") map { _.as[String]}
+  lazy val batterSide = attributes.get("@batter-side") map { _.as[BodySideList]}
+  lazy val atBatNumber = attributes.get("@at-bat-number") map { _.as[String]}
 }
 
       
@@ -35,7 +35,7 @@ case class BaseballTeamMetadataComplexType(attributes: Map[String, scalaxb.DataR
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val probableu45startingu45pitcheru45idref = attributes.get("@probable-starting-pitcher-idref") map { _.as[String]}
+  lazy val probableStartingPitcherIdref = attributes.get("@probable-starting-pitcher-idref") map { _.as[String]}
 }
 
       
@@ -47,8 +47,8 @@ case class BaseballPlayerMetadataComplexType(attributes: Map[String, scalaxb.Dat
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val battingu45hand = attributes.get("@batting-hand") map { _.as[BodySideList]}
-  lazy val throwingu45hand = attributes.get("@throwing-hand") map { _.as[BodySideList]}
+  lazy val battingHand = attributes.get("@batting-hand") map { _.as[BodySideList]}
+  lazy val throwingHand = attributes.get("@throwing-hand") map { _.as[BodySideList]}
 }
 
       
@@ -56,45 +56,45 @@ case class BaseballPlayerMetadataComplexType(attributes: Map[String, scalaxb.Dat
 
 /** Stats collected by a player. | Includes offensive, pitching, and defensive stats.
 */
-case class BaseballPlayerStatsComplexType(statsu45baseballu45offensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
-  statsu45baseballu45pitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
-  statsu45baseballu45defensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
+case class BaseballPlayerStatsComplexType(statsBaseballOffensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
+  statsBaseballPitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
+  statsBaseballDefensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
   attributes: Map[String, scalaxb.DataRecord[Any]] = Map()) extends BaseBaseballStatsComplexTypable with PlayerStatsComplexTypeOption {
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
 }
 
       
@@ -102,45 +102,45 @@ case class BaseballPlayerStatsComplexType(statsu45baseballu45offensive: Seq[org.
 
 /** Specific statistics for baseball. | Includes offensive, pitching, and defensive stats.
 */
-case class BaseballTeamStatsComplexType(statsu45baseballu45offensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
-  statsu45baseballu45pitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
-  statsu45baseballu45defensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
+case class BaseballTeamStatsComplexType(statsBaseballOffensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
+  statsBaseballPitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
+  statsBaseballDefensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
   attributes: Map[String, scalaxb.DataRecord[Any]] = Map()) extends BaseBaseballStatsComplexTypable with TeamStatsComplexTypeOption {
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
 }
 
       
@@ -149,88 +149,88 @@ case class BaseballTeamStatsComplexType(statsu45baseballu45offensive: Seq[org.ip
 /** Specific statistics for baseball. | Includes offensive, pitching, and defensive stats.
 */
 trait BaseBaseballStatsComplexTypable {
-  def statsu45baseballu45offensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType]
-  def statsu45baseballu45pitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType]
-  def statsu45baseballu45defensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType]
+  def statsBaseballOffensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType]
+  def statsBaseballPitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType]
+  def statsBaseballDefensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType]
   def id: Option[String]
   def classValue: Option[String]
   def style: Option[String]
-  def statsu45coverage: Option[String]
-  def teamu45coverage: Option[org.iptc.sportsml.v3.Teamu45coverage]
-  def durationu45scope: Option[String]
-  def alignmentu45scope: Option[org.iptc.sportsml.v3.Alignmentu45scope]
+  def statsCoverage: Option[String]
+  def teamCoverage: Option[org.iptc.sportsml.v3.TeamCoverage]
+  def durationScope: Option[String]
+  def alignmentScope: Option[org.iptc.sportsml.v3.AlignmentScope]
   def position: Option[String]
-  def recordu45makingu45scope: Option[String]
-  def scopingu45label: Option[String]
-  def periodu45value: Option[String]
-  def periodu45type: Option[String]
-  def startu45dateu45time: Option[String]
-  def endu45dateu45time: Option[String]
-  def periodu45startu45dateu45time: Option[String]
-  def periodu45endu45dateu45time: Option[String]
-  def temporalu45unitu45type: Option[String]
-  def temporalu45unitu45value: Option[String]
-  def eventu45span: Option[BigInt]
-  def opponentu45value: Option[String]
-  def opponentu45type: Option[String]
+  def recordMakingScope: Option[String]
+  def scopingLabel: Option[String]
+  def periodValue: Option[String]
+  def periodType: Option[String]
+  def startDateTime: Option[String]
+  def endDateTime: Option[String]
+  def periodStartDateTime: Option[String]
+  def periodEndDateTime: Option[String]
+  def temporalUnitType: Option[String]
+  def temporalUnitValue: Option[String]
+  def eventSpan: Option[BigInt]
+  def opponentValue: Option[String]
+  def opponentType: Option[String]
   def team: Option[String]
   def competition: Option[String]
-  def unitu45value: Option[String]
-  def unitu45type: Option[String]
+  def unitValue: Option[String]
+  def unitType: Option[String]
   def situation: Option[String]
-  def locationu45key: Option[String]
-  def venueu45type: Option[String]
-  def surfaceu45type: Option[String]
-  def weatheru45type: Option[String]
-  def scopeu45value: Option[String]
+  def locationKey: Option[String]
+  def venueType: Option[String]
+  def surfaceType: Option[String]
+  def weatherType: Option[String]
+  def scopeValue: Option[String]
   def distance: Option[String]
-  def distanceu45maximum: Option[String]
-  def distanceu45minimum: Option[String]
-  def measurementu45units: Option[String]
+  def distanceMaximum: Option[String]
+  def distanceMinimum: Option[String]
+  def measurementUnits: Option[String]
 }
 
 
 /** Specific statistics for baseball. | Includes offensive, pitching, and defensive stats.
 */
-case class BaseBaseballStatsComplexType(statsu45baseballu45offensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
-  statsu45baseballu45pitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
-  statsu45baseballu45defensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
+case class BaseBaseballStatsComplexType(statsBaseballOffensive: Seq[org.iptc.sportsml.v3.BaseballStatsOffensiveComplexType] = Nil,
+  statsBaseballPitching: Seq[org.iptc.sportsml.v3.BaseballStatsPitchingComplexType] = Nil,
+  statsBaseballDefensive: Seq[org.iptc.sportsml.v3.BaseballStatsDefensiveComplexType] = Nil,
   attributes: Map[String, scalaxb.DataRecord[Any]] = Map()) extends BaseBaseballStatsComplexTypable {
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
 }
 
       
@@ -242,117 +242,117 @@ case class BaseballStatsOffensiveComplexType(attributes: Map[String, scalaxb.Dat
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
   lazy val average = attributes.get("@average") map { _.as[String]}
-  lazy val runsu45scored = attributes.get("@runs-scored") map { _.as[String]}
-  lazy val atu45bats = attributes.get("@at-bats") map { _.as[String]}
+  lazy val runsScored = attributes.get("@runs-scored") map { _.as[String]}
+  lazy val atBats = attributes.get("@at-bats") map { _.as[String]}
   lazy val hits = attributes.get("@hits") map { _.as[String]}
   lazy val rbi = attributes.get("@rbi") map { _.as[String]}
-  lazy val totalu45bases = attributes.get("@total-bases") map { _.as[String]}
-  lazy val sluggingu45percentage = attributes.get("@slugging-percentage") map { _.as[String]}
-  lazy val basesu45onu45balls = attributes.get("@bases-on-balls") map { _.as[String]}
-  lazy val basesu45onu45ballsu45rate = attributes.get("@bases-on-balls-rate") map { _.as[String]}
-  lazy val basesu45onu45ballsu45intentional = attributes.get("@bases-on-balls-intentional") map { _.as[String]}
-  lazy val strikeoutsu45against = attributes.get("@strikeouts-against") map { _.as[String]}
-  lazy val strikeoutsu45looking = attributes.get("@strikeouts-looking") map { _.as[String]}
-  lazy val outsu45ground = attributes.get("@outs-ground") map { _.as[String]}
-  lazy val outsu45fly = attributes.get("@outs-fly") map { _.as[String]}
-  lazy val leftu45onu45base = attributes.get("@left-on-base") map { _.as[String]}
-  lazy val leftu45inu45scoringu45position = attributes.get("@left-in-scoring-position") map { _.as[String]}
+  lazy val totalBases = attributes.get("@total-bases") map { _.as[String]}
+  lazy val sluggingPercentage = attributes.get("@slugging-percentage") map { _.as[String]}
+  lazy val basesOnBalls = attributes.get("@bases-on-balls") map { _.as[String]}
+  lazy val basesOnBallsRate = attributes.get("@bases-on-balls-rate") map { _.as[String]}
+  lazy val basesOnBallsIntentional = attributes.get("@bases-on-balls-intentional") map { _.as[String]}
+  lazy val strikeoutsAgainst = attributes.get("@strikeouts-against") map { _.as[String]}
+  lazy val strikeoutsLooking = attributes.get("@strikeouts-looking") map { _.as[String]}
+  lazy val outsGround = attributes.get("@outs-ground") map { _.as[String]}
+  lazy val outsFly = attributes.get("@outs-fly") map { _.as[String]}
+  lazy val leftOnBase = attributes.get("@left-on-base") map { _.as[String]}
+  lazy val leftInScoringPosition = attributes.get("@left-in-scoring-position") map { _.as[String]}
   lazy val singles = attributes.get("@singles") map { _.as[String]}
   lazy val doubles = attributes.get("@doubles") map { _.as[String]}
   lazy val triples = attributes.get("@triples") map { _.as[String]}
-  lazy val homeu45runs = attributes.get("@home-runs") map { _.as[String]}
-  lazy val homeu45runsu45season = attributes.get("@home-runs-season") map { _.as[String]}
-  lazy val grandu45slams = attributes.get("@grand-slams") map { _.as[String]}
-  lazy val streaku45hits = attributes.get("@streak-hits") map { _.as[String]}
-  lazy val hitsu45eventu45winning = attributes.get("@hits-event-winning") map { _.as[String]}
-  lazy val atu45batsu45peru45rbi = attributes.get("@at-bats-per-rbi") map { _.as[String]}
-  lazy val plateu45appearancesu45peru45rbi = attributes.get("@plate-appearances-per-rbi") map { _.as[String]}
-  lazy val atu45batsu45peru45homeu45run = attributes.get("@at-bats-per-home-run") map { _.as[String]}
-  lazy val plateu45appearancesu45peru45homeu45run = attributes.get("@plate-appearances-per-home-run") map { _.as[String]}
-  lazy val sacu45flies = attributes.get("@sac-flies") map { _.as[String]}
-  lazy val sacu45bunts = attributes.get("@sac-bunts") map { _.as[String]}
+  lazy val homeRuns = attributes.get("@home-runs") map { _.as[String]}
+  lazy val homeRunsSeason = attributes.get("@home-runs-season") map { _.as[String]}
+  lazy val grandSlams = attributes.get("@grand-slams") map { _.as[String]}
+  lazy val streakHits = attributes.get("@streak-hits") map { _.as[String]}
+  lazy val hitsEventWinning = attributes.get("@hits-event-winning") map { _.as[String]}
+  lazy val atBatsPerRbi = attributes.get("@at-bats-per-rbi") map { _.as[String]}
+  lazy val plateAppearancesPerRbi = attributes.get("@plate-appearances-per-rbi") map { _.as[String]}
+  lazy val atBatsPerHomeRun = attributes.get("@at-bats-per-home-run") map { _.as[String]}
+  lazy val plateAppearancesPerHomeRun = attributes.get("@plate-appearances-per-home-run") map { _.as[String]}
+  lazy val sacFlies = attributes.get("@sac-flies") map { _.as[String]}
+  lazy val sacBunts = attributes.get("@sac-bunts") map { _.as[String]}
   lazy val sacrifices = attributes.get("@sacrifices") map { _.as[String]}
-  lazy val groundedu45intou45doubleu45play = attributes.get("@grounded-into-double-play") map { _.as[String]}
-  lazy val hitu45intou45doubleu45play = attributes.get("@hit-into-double-play") map { _.as[String]}
-  lazy val movedu45up = attributes.get("@moved-up") map { _.as[String]}
-  lazy val onu45baseu45percentage = attributes.get("@on-base-percentage") map { _.as[String]}
-  lazy val stolenu45bases = attributes.get("@stolen-bases") map { _.as[String]}
-  lazy val stolenu45basesu45caught = attributes.get("@stolen-bases-caught") map { _.as[String]}
-  lazy val stolenu45basesu45average = attributes.get("@stolen-bases-average") map { _.as[String]}
-  lazy val hitu45byu45pitch = attributes.get("@hit-by-pitch") map { _.as[String]}
-  lazy val reachedu45baseu45defensiveu45interference = attributes.get("@reached-base-defensive-interference") map { _.as[String]}
-  lazy val reachedu45baseu45error = attributes.get("@reached-base-error") map { _.as[String]}
-  lazy val reachedu45baseu45fielderu45choice = attributes.get("@reached-base-fielder-choice") map { _.as[String]}
-  lazy val onu45baseu45plusu45slugging = attributes.get("@on-base-plus-slugging") map { _.as[String]}
-  lazy val plateu45appearances = attributes.get("@plate-appearances") map { _.as[String]}
-  lazy val hitsu45extrau45base = attributes.get("@hits-extra-base") map { _.as[String]}
-  lazy val strikeoutu45rate = attributes.get("@strikeout-rate") map { _.as[String]}
-  lazy val doubleu45playsu45against = attributes.get("@double-plays-against") map { _.as[String]}
-  lazy val tripleu45playsu45against = attributes.get("@triple-plays-against") map { _.as[String]}
-  lazy val picku45offsu45against = attributes.get("@pick-offs-against") map { _.as[String]}
-  lazy val gamesu45played = attributes.get("@games-played") map { _.as[String]}
+  lazy val groundedIntoDoublePlay = attributes.get("@grounded-into-double-play") map { _.as[String]}
+  lazy val hitIntoDoublePlay = attributes.get("@hit-into-double-play") map { _.as[String]}
+  lazy val movedUp = attributes.get("@moved-up") map { _.as[String]}
+  lazy val onBasePercentage = attributes.get("@on-base-percentage") map { _.as[String]}
+  lazy val stolenBases = attributes.get("@stolen-bases") map { _.as[String]}
+  lazy val stolenBasesCaught = attributes.get("@stolen-bases-caught") map { _.as[String]}
+  lazy val stolenBasesAverage = attributes.get("@stolen-bases-average") map { _.as[String]}
+  lazy val hitByPitch = attributes.get("@hit-by-pitch") map { _.as[String]}
+  lazy val reachedBaseDefensiveInterference = attributes.get("@reached-base-defensive-interference") map { _.as[String]}
+  lazy val reachedBaseError = attributes.get("@reached-base-error") map { _.as[String]}
+  lazy val reachedBaseFielderChoice = attributes.get("@reached-base-fielder-choice") map { _.as[String]}
+  lazy val onBasePlusSlugging = attributes.get("@on-base-plus-slugging") map { _.as[String]}
+  lazy val plateAppearances = attributes.get("@plate-appearances") map { _.as[String]}
+  lazy val hitsExtraBase = attributes.get("@hits-extra-base") map { _.as[String]}
+  lazy val strikeoutRate = attributes.get("@strikeout-rate") map { _.as[String]}
+  lazy val doublePlaysAgainst = attributes.get("@double-plays-against") map { _.as[String]}
+  lazy val triplePlaysAgainst = attributes.get("@triple-plays-against") map { _.as[String]}
+  lazy val pickOffsAgainst = attributes.get("@pick-offs-against") map { _.as[String]}
+  lazy val gamesPlayed = attributes.get("@games-played") map { _.as[String]}
 }
 
       
 
-trait Eventu45credit
+trait EventCredit
 
-object Eventu45credit {
-  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.Eventu45credit]): Eventu45credit = fmt.reads(scala.xml.Text(value), Nil) match {
-    case Right(x: Eventu45credit) => x
+object EventCredit {
+  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.EventCredit]): EventCredit = fmt.reads(scala.xml.Text(value), Nil) match {
+    case Right(x: EventCredit) => x
     case x => throw new RuntimeException(s"fromString returned unexpected value $x for input $value")
   }
 }
 
-case object Win extends Eventu45credit { override def toString = "win" }
-case object Loss extends Eventu45credit { override def toString = "loss" }
-case object Save extends Eventu45credit { override def toString = "save" }
+case object Win extends EventCredit { override def toString = "win" }
+case object Loss extends EventCredit { override def toString = "loss" }
+case object Save extends EventCredit { override def toString = "save" }
 
-trait Saveu45credit
+trait SaveCredit
 
-object Saveu45credit {
-  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.Saveu45credit]): Saveu45credit = fmt.reads(scala.xml.Text(value), Nil) match {
-    case Right(x: Saveu45credit) => x
+object SaveCredit {
+  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.SaveCredit]): SaveCredit = fmt.reads(scala.xml.Text(value), Nil) match {
+    case Right(x: SaveCredit) => x
     case x => throw new RuntimeException(s"fromString returned unexpected value $x for input $value")
   }
 }
 
-case object Hold extends Saveu45credit { override def toString = "hold" }
-case object Blown extends Saveu45credit { override def toString = "blown" }
-case object SaveValue extends Saveu45credit { override def toString = "save" }
+case object Hold extends SaveCredit { override def toString = "hold" }
+case object Blown extends SaveCredit { override def toString = "blown" }
+case object SaveValue extends SaveCredit { override def toString = "save" }
 
 
 /** Stats accumulated while a team is pitching. | Includes strikeouts and shutouts.
@@ -361,88 +361,88 @@ case class BaseballStatsPitchingComplexType(attributes: Map[String, scalaxb.Data
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
-  lazy val runsu45allowed = attributes.get("@runs-allowed") map { _.as[String]}
-  lazy val homeu45runsu45allowed = attributes.get("@home-runs-allowed") map { _.as[String]}
-  lazy val sacrificeu45buntsu45allowed = attributes.get("@sacrifice-bunts-allowed") map { _.as[String]}
-  lazy val sacrificeu45hitsu45allowed = attributes.get("@sacrifice-hits-allowed") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val runsAllowed = attributes.get("@runs-allowed") map { _.as[String]}
+  lazy val homeRunsAllowed = attributes.get("@home-runs-allowed") map { _.as[String]}
+  lazy val sacrificeBuntsAllowed = attributes.get("@sacrifice-bunts-allowed") map { _.as[String]}
+  lazy val sacrificeHitsAllowed = attributes.get("@sacrifice-hits-allowed") map { _.as[String]}
   lazy val interferences = attributes.get("@interferences") map { _.as[String]}
-  lazy val inningsu45pitched = attributes.get("@innings-pitched") map { _.as[String]}
-  lazy val inningsu45pitchedu45average = attributes.get("@innings-pitched-average") map { _.as[String]}
-  lazy val hitsu45allowed = attributes.get("@hits-allowed") map { _.as[String]}
-  lazy val earnedu45runs = attributes.get("@earned-runs") map { _.as[String]}
-  lazy val unearnedu45runs = attributes.get("@unearned-runs") map { _.as[String]}
-  lazy val basesu45onu45ballsu45allowed = attributes.get("@bases-on-balls-allowed") map { _.as[String]}
-  lazy val basesu45onu45ballsu45intentionalu45pitcher = attributes.get("@bases-on-balls-intentional-pitcher") map { _.as[String]}
+  lazy val inningsPitched = attributes.get("@innings-pitched") map { _.as[String]}
+  lazy val inningsPitchedAverage = attributes.get("@innings-pitched-average") map { _.as[String]}
+  lazy val hitsAllowed = attributes.get("@hits-allowed") map { _.as[String]}
+  lazy val earnedRuns = attributes.get("@earned-runs") map { _.as[String]}
+  lazy val unearnedRuns = attributes.get("@unearned-runs") map { _.as[String]}
+  lazy val basesOnBallsAllowed = attributes.get("@bases-on-balls-allowed") map { _.as[String]}
+  lazy val basesOnBallsIntentionalPitcher = attributes.get("@bases-on-balls-intentional-pitcher") map { _.as[String]}
   lazy val strikeouts = attributes.get("@strikeouts") map { _.as[String]}
-  lazy val strikeoutu45tou45bbu45ratio = attributes.get("@strikeout-to-bb-ratio") map { _.as[String]}
-  lazy val numberu45ofu45pitches = attributes.get("@number-of-pitches") map { _.as[String]}
-  lazy val numberu45ofu45strikes = attributes.get("@number-of-strikes") map { _.as[String]}
+  lazy val strikeoutToBbRatio = attributes.get("@strikeout-to-bb-ratio") map { _.as[String]}
+  lazy val numberOfPitches = attributes.get("@number-of-pitches") map { _.as[String]}
+  lazy val numberOfStrikes = attributes.get("@number-of-strikes") map { _.as[String]}
   lazy val era = attributes.get("@era") map { _.as[String]}
   lazy val whip = attributes.get("@whip") map { _.as[String]}
-  lazy val inheritedu45runnersu45scored = attributes.get("@inherited-runners-scored") map { _.as[String]}
-  lazy val picku45offs = attributes.get("@pick-offs") map { _.as[String]}
-  lazy val errorsu45hitu45withu45pitch = attributes.get("@errors-hit-with-pitch") map { _.as[String]}
-  lazy val errorsu45wildu45pitch = attributes.get("@errors-wild-pitch") map { _.as[String]}
+  lazy val inheritedRunnersScored = attributes.get("@inherited-runners-scored") map { _.as[String]}
+  lazy val pickOffs = attributes.get("@pick-offs") map { _.as[String]}
+  lazy val errorsHitWithPitch = attributes.get("@errors-hit-with-pitch") map { _.as[String]}
+  lazy val errorsWildPitch = attributes.get("@errors-wild-pitch") map { _.as[String]}
   lazy val balks = attributes.get("@balks") map { _.as[String]}
   lazy val wins = attributes.get("@wins") map { _.as[String]}
   lazy val losses = attributes.get("@losses") map { _.as[String]}
   lazy val saves = attributes.get("@saves") map { _.as[String]}
   lazy val holds = attributes.get("@holds") map { _.as[String]}
-  lazy val savesu45blown = attributes.get("@saves-blown") map { _.as[String]}
-  lazy val savesu45tough = attributes.get("@saves-tough") map { _.as[String]}
-  lazy val savesu45opportunities = attributes.get("@saves-opportunities") map { _.as[String]}
-  lazy val reliefu45points = attributes.get("@relief-points") map { _.as[String]}
+  lazy val savesBlown = attributes.get("@saves-blown") map { _.as[String]}
+  lazy val savesTough = attributes.get("@saves-tough") map { _.as[String]}
+  lazy val savesOpportunities = attributes.get("@saves-opportunities") map { _.as[String]}
+  lazy val reliefPoints = attributes.get("@relief-points") map { _.as[String]}
   lazy val shutouts = attributes.get("@shutouts") map { _.as[String]}
-  lazy val gamesu45complete = attributes.get("@games-complete") map { _.as[String]}
-  lazy val gamesu45finished = attributes.get("@games-finished") map { _.as[String]}
-  lazy val gamesu45pitched = attributes.get("@games-pitched") map { _.as[String]}
-  lazy val winningu45percentage = attributes.get("@winning-percentage") map { _.as[String]}
-  lazy val eventu45credit = attributes.get("@event-credit") map { _.as[Eventu45credit]}
-  lazy val saveu45credit = attributes.get("@save-credit") map { _.as[Saveu45credit]}
-  lazy val battersu45averageu45against = attributes.get("@batters-average-against") map { _.as[String]}
-  lazy val battersu45atu45batsu45against = attributes.get("@batters-at-bats-against") map { _.as[String]}
-  lazy val battersu45totalu45against = attributes.get("@batters-total-against") map { _.as[String]}
-  lazy val battersu45totalu45basesu45against = attributes.get("@batters-total-bases-against") map { _.as[String]}
-  lazy val battersu45sluggingu45percentageu45against = attributes.get("@batters-slugging-percentage-against") map { _.as[String]}
-  lazy val battersu45onu45baseu45percentageu45against = attributes.get("@batters-on-base-percentage-against") map { _.as[String]}
-  lazy val battersu45doublesu45against = attributes.get("@batters-doubles-against") map { _.as[String]}
-  lazy val battersu45triplesu45against = attributes.get("@batters-triples-against") map { _.as[String]}
-  lazy val battersu45homeu45runsu45against = attributes.get("@batters-home-runs-against") map { _.as[String]}
-  lazy val inheritedu45runnersu45total = attributes.get("@inherited-runners-total") map { _.as[String]}
-  lazy val sacrificeu45fliesu45allowed = attributes.get("@sacrifice-flies-allowed") map { _.as[String]}
-  lazy val shutoutsu45combined = attributes.get("@shutouts-combined") map { _.as[String]}
+  lazy val gamesComplete = attributes.get("@games-complete") map { _.as[String]}
+  lazy val gamesFinished = attributes.get("@games-finished") map { _.as[String]}
+  lazy val gamesPitched = attributes.get("@games-pitched") map { _.as[String]}
+  lazy val winningPercentage = attributes.get("@winning-percentage") map { _.as[String]}
+  lazy val eventCredit = attributes.get("@event-credit") map { _.as[EventCredit]}
+  lazy val saveCredit = attributes.get("@save-credit") map { _.as[SaveCredit]}
+  lazy val battersAverageAgainst = attributes.get("@batters-average-against") map { _.as[String]}
+  lazy val battersAtBatsAgainst = attributes.get("@batters-at-bats-against") map { _.as[String]}
+  lazy val battersTotalAgainst = attributes.get("@batters-total-against") map { _.as[String]}
+  lazy val battersTotalBasesAgainst = attributes.get("@batters-total-bases-against") map { _.as[String]}
+  lazy val battersSluggingPercentageAgainst = attributes.get("@batters-slugging-percentage-against") map { _.as[String]}
+  lazy val battersOnBasePercentageAgainst = attributes.get("@batters-on-base-percentage-against") map { _.as[String]}
+  lazy val battersDoublesAgainst = attributes.get("@batters-doubles-against") map { _.as[String]}
+  lazy val battersTriplesAgainst = attributes.get("@batters-triples-against") map { _.as[String]}
+  lazy val battersHomeRunsAgainst = attributes.get("@batters-home-runs-against") map { _.as[String]}
+  lazy val inheritedRunnersTotal = attributes.get("@inherited-runners-total") map { _.as[String]}
+  lazy val sacrificeFliesAllowed = attributes.get("@sacrifice-flies-allowed") map { _.as[String]}
+  lazy val shutoutsCombined = attributes.get("@shutouts-combined") map { _.as[String]}
 }
 
       
@@ -454,84 +454,85 @@ case class BaseballStatsDefensiveComplexType(attributes: Map[String, scalaxb.Dat
   lazy val id = attributes.get("@id") map { _.as[String]}
   lazy val classValue = attributes.get("@class") map { _.as[String]}
   lazy val style = attributes.get("@style") map { _.as[String]}
-  lazy val statsu45coverage = attributes.get("@stats-coverage") map { _.as[String]}
-  lazy val teamu45coverage = attributes.get("@team-coverage") map { _.as[Teamu45coverage]}
-  lazy val durationu45scope = attributes.get("@duration-scope") map { _.as[String]}
-  lazy val alignmentu45scope = attributes.get("@alignment-scope") map { _.as[Alignmentu45scope]}
+  lazy val statsCoverage = attributes.get("@stats-coverage") map { _.as[String]}
+  lazy val teamCoverage = attributes.get("@team-coverage") map { _.as[TeamCoverage]}
+  lazy val durationScope = attributes.get("@duration-scope") map { _.as[String]}
+  lazy val alignmentScope = attributes.get("@alignment-scope") map { _.as[AlignmentScope]}
   lazy val position = attributes.get("@position") map { _.as[String]}
-  lazy val recordu45makingu45scope = attributes.get("@record-making-scope") map { _.as[String]}
-  lazy val scopingu45label = attributes.get("@scoping-label") map { _.as[String]}
-  lazy val periodu45value = attributes.get("@period-value") map { _.as[String]}
-  lazy val periodu45type = attributes.get("@period-type") map { _.as[String]}
-  lazy val startu45dateu45time = attributes.get("@start-date-time") map { _.as[String]}
-  lazy val endu45dateu45time = attributes.get("@end-date-time") map { _.as[String]}
-  lazy val periodu45startu45dateu45time = attributes.get("@period-start-date-time") map { _.as[String]}
-  lazy val periodu45endu45dateu45time = attributes.get("@period-end-date-time") map { _.as[String]}
-  lazy val temporalu45unitu45type = attributes.get("@temporal-unit-type") map { _.as[String]}
-  lazy val temporalu45unitu45value = attributes.get("@temporal-unit-value") map { _.as[String]}
-  lazy val eventu45span = attributes.get("@event-span") map { _.as[BigInt]}
-  lazy val opponentu45value = attributes.get("@opponent-value") map { _.as[String]}
-  lazy val opponentu45type = attributes.get("@opponent-type") map { _.as[String]}
+  lazy val recordMakingScope = attributes.get("@record-making-scope") map { _.as[String]}
+  lazy val scopingLabel = attributes.get("@scoping-label") map { _.as[String]}
+  lazy val periodValue = attributes.get("@period-value") map { _.as[String]}
+  lazy val periodType = attributes.get("@period-type") map { _.as[String]}
+  lazy val startDateTime = attributes.get("@start-date-time") map { _.as[String]}
+  lazy val endDateTime = attributes.get("@end-date-time") map { _.as[String]}
+  lazy val periodStartDateTime = attributes.get("@period-start-date-time") map { _.as[String]}
+  lazy val periodEndDateTime = attributes.get("@period-end-date-time") map { _.as[String]}
+  lazy val temporalUnitType = attributes.get("@temporal-unit-type") map { _.as[String]}
+  lazy val temporalUnitValue = attributes.get("@temporal-unit-value") map { _.as[String]}
+  lazy val eventSpan = attributes.get("@event-span") map { _.as[BigInt]}
+  lazy val opponentValue = attributes.get("@opponent-value") map { _.as[String]}
+  lazy val opponentType = attributes.get("@opponent-type") map { _.as[String]}
   lazy val team = attributes.get("@team") map { _.as[String]}
   lazy val competition = attributes.get("@competition") map { _.as[String]}
-  lazy val unitu45value = attributes.get("@unit-value") map { _.as[String]}
-  lazy val unitu45type = attributes.get("@unit-type") map { _.as[String]}
+  lazy val unitValue = attributes.get("@unit-value") map { _.as[String]}
+  lazy val unitType = attributes.get("@unit-type") map { _.as[String]}
   lazy val situation = attributes.get("@situation") map { _.as[String]}
-  lazy val locationu45key = attributes.get("@location-key") map { _.as[String]}
-  lazy val venueu45type = attributes.get("@venue-type") map { _.as[String]}
-  lazy val surfaceu45type = attributes.get("@surface-type") map { _.as[String]}
-  lazy val weatheru45type = attributes.get("@weather-type") map { _.as[String]}
-  lazy val scopeu45value = attributes.get("@scope-value") map { _.as[String]}
+  lazy val locationKey = attributes.get("@location-key") map { _.as[String]}
+  lazy val venueType = attributes.get("@venue-type") map { _.as[String]}
+  lazy val surfaceType = attributes.get("@surface-type") map { _.as[String]}
+  lazy val weatherType = attributes.get("@weather-type") map { _.as[String]}
+  lazy val scopeValue = attributes.get("@scope-value") map { _.as[String]}
   lazy val distance = attributes.get("@distance") map { _.as[String]}
-  lazy val distanceu45maximum = attributes.get("@distance-maximum") map { _.as[String]}
-  lazy val distanceu45minimum = attributes.get("@distance-minimum") map { _.as[String]}
-  lazy val measurementu45units = attributes.get("@measurement-units") map { _.as[String]}
-  lazy val doubleu45plays = attributes.get("@double-plays") map { _.as[String]}
-  lazy val tripleu45plays = attributes.get("@triple-plays") map { _.as[String]}
+  lazy val distanceMaximum = attributes.get("@distance-maximum") map { _.as[String]}
+  lazy val distanceMinimum = attributes.get("@distance-minimum") map { _.as[String]}
+  lazy val measurementUnits = attributes.get("@measurement-units") map { _.as[String]}
+  lazy val doublePlays = attributes.get("@double-plays") map { _.as[String]}
+  lazy val triplePlays = attributes.get("@triple-plays") map { _.as[String]}
   lazy val putouts = attributes.get("@putouts") map { _.as[String]}
   lazy val assists = attributes.get("@assists") map { _.as[String]}
   lazy val errors = attributes.get("@errors") map { _.as[String]}
-  lazy val fieldingu45chances = attributes.get("@fielding-chances") map { _.as[String]}
-  lazy val fieldingu45percentage = attributes.get("@fielding-percentage") map { _.as[String]}
-  lazy val defensiveu45average = attributes.get("@defensive-average") map { _.as[String]}
-  lazy val errorsu45passedu45ball = attributes.get("@errors-passed-ball") map { _.as[String]}
-  lazy val errorsu45catchersu45interference = attributes.get("@errors-catchers-interference") map { _.as[String]}
-  lazy val stolenu45basesu45against = attributes.get("@stolen-bases-against") map { _.as[String]}
-  lazy val stolenu45basesu45caughtu45defense = attributes.get("@stolen-bases-caught-defense") map { _.as[String]}
-  lazy val stolenu45basesu45averageu45defense = attributes.get("@stolen-bases-average-defense") map { _.as[String]}
-  lazy val inningsu45played = attributes.get("@innings-played") map { _.as[String]}
-  lazy val gamesu45playedu45position = attributes.get("@games-played-position") map { _.as[String]}
+  lazy val fieldingChances = attributes.get("@fielding-chances") map { _.as[String]}
+  lazy val fieldingPercentage = attributes.get("@fielding-percentage") map { _.as[String]}
+  lazy val defensiveAverage = attributes.get("@defensive-average") map { _.as[String]}
+  lazy val errorsPassedBall = attributes.get("@errors-passed-ball") map { _.as[String]}
+  lazy val errorsCatchersInterference = attributes.get("@errors-catchers-interference") map { _.as[String]}
+  lazy val stolenBasesAgainst = attributes.get("@stolen-bases-against") map { _.as[String]}
+  lazy val stolenBasesCaughtDefense = attributes.get("@stolen-bases-caught-defense") map { _.as[String]}
+  lazy val stolenBasesAverageDefense = attributes.get("@stolen-bases-average-defense") map { _.as[String]}
+  lazy val inningsPlayed = attributes.get("@innings-played") map { _.as[String]}
+  lazy val gamesPlayedPosition = attributes.get("@games-played-position") map { _.as[String]}
 }
 
       
 
-trait Inningu45halfType
+trait InningHalfType
 
-object Inningu45halfType {
-  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.Inningu45halfType]): Inningu45halfType = fmt.reads(scala.xml.Text(value), Nil) match {
-    case Right(x: Inningu45halfType) => x
+object InningHalfType {
+  def fromString(value: String, scope: scala.xml.NamespaceBinding)(implicit fmt: scalaxb.XMLFormat[org.iptc.sportsml.v3.InningHalfType]): InningHalfType = fmt.reads(scala.xml.Text(value), Nil) match {
+    case Right(x: InningHalfType) => x
     case x => throw new RuntimeException(s"fromString returned unexpected value $x for input $value")
   }
 }
 
-case object TopValue extends Inningu45halfType { override def toString = "top" }
-case object BottomValue extends Inningu45halfType { override def toString = "bottom" }
+case object TopValue extends InningHalfType { override def toString = "top" }
+case object BottomValue extends InningHalfType { override def toString = "bottom" }
 
 
-case class EventStateBaseball(inningu45value: Option[String] = None,
-  inningu45half: Option[org.iptc.sportsml.v3.Inningu45halfType] = None,
+case class EventStateBaseball(inningValue: Option[String] = None,
+  inningHalf: Option[org.iptc.sportsml.v3.InningHalfType] = None,
   outs: Option[String] = None,
   balls: Option[String] = None,
   strikes: Option[String] = None,
-  runneru45onu45first: Option[String] = None,
-  runneru45onu45firstu45idref: Option[String] = None,
-  runneru45onu45second: Option[String] = None,
-  runneru45onu45secondu45idref: Option[String] = None,
-  runneru45onu45third: Option[String] = None,
-  runneru45onu45thirdu45idref: Option[String] = None,
-  runsu45thisu45inningu45half: Option[String] = None,
-  pitcheru45idref: Option[String] = None,
-  batteru45idref: Option[String] = None,
-  batteru45side: Option[org.iptc.sportsml.v3.BodySideList] = None,
-  atu45batu45number: Option[String] = None)
+  runnerOnFirst: Option[String] = None,
+  runnerOnFirstIdref: Option[String] = None,
+  runnerOnSecond: Option[String] = None,
+  runnerOnSecondIdref: Option[String] = None,
+  runnerOnThird: Option[String] = None,
+  runnerOnThirdIdref: Option[String] = None,
+  runsThisInningHalf: Option[String] = None,
+  pitcherIdref: Option[String] = None,
+  batterIdref: Option[String] = None,
+  batterSide: Option[org.iptc.sportsml.v3.BodySideList] = None,
+  atBatNumber: Option[String] = None)
+
 

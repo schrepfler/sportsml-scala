@@ -4614,9 +4614,9 @@ case class Ruby(rb: String,
 
       
 
-case class RubySequence1(rp: String,
+case class RubySequence1(rp1: String,
   rt: String,
-  rp: String)
+  rp2: String)
 
 trait RubyOption
 
@@ -4952,4 +4952,5 @@ case class NewsContentCharacteristicsType(wordcount: Option[BigInt] = None,
   videoscalinguri: Option[java.net.URI] = None,
   videodefinition: Option[String] = None,
   videodefinitionuri: Option[java.net.URI] = None)
+
 
