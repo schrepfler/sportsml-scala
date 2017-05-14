@@ -5,46 +5,49 @@ lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 
 lazy val root = (project in file(".")).
 
-  sonatypeProfileName := "net.sigmalab"
-
-  pomExtra in Global := {
-    <url>https://github.com/schrepfler/sportsml-scala</url>
-    <!-- License of your choice -->
-    <licenses>
-      <license>
-        <name>Apache 2</name>
-        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      </license>
-    </licenses>
-    <!-- SCM information. Modify the following URLs -->
-    <scm>
-      <connection>scm:git:github.com/schrepfler/sportsml-scala</connection>
-      <developerConnection>scm:git:git@github.com:schrepfler/sportsml-scala.git</developerConnection>
-      <url>github.com/schrepfler/sportsml-scala</url>
-    </scm>
-    <!-- Developer contact information -->
-    <developers>
-      <developer>
-        <id>schrepfler</id>
-        <name>Srdan Srepfler</name>
-        <url>github.com/schrepfler</url>
-      </developer>
-    </developers>
-  }
-
   // enablePlugins(ScalaxbPlugin).
   settings(inThisBuild(List(
-    organization  := "net.sigmalab",
     scalaVersion  := "2.12.2"
   ))).
   settings(
+    sonatypeProfileName := "net.sigmalab",
+    organization  := "net.sigmalab",
     name          := "sportsml-scala",
+
     libraryDependencies ++= Seq(dispatch),
     libraryDependencies ++= {
       if (scalaVersion.value startsWith "2.10") Seq()
       else Seq(scalaXml, scalaParser)
-    }).
+    }
+
+    ).
   settings(
+
+    pomExtra in Global := {
+      <url>https://github.com/schrepfler/sportsml-scala</url>
+
+      <licenses>
+        <license>
+          <name>Apache 2</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+      </licenses>
+
+      <scm>
+        <connection>scm:git:github.com/schrepfler/sportsml-scala</connection>
+        <developerConnection>scm:git:git@github.com:schrepfler/sportsml-scala.git</developerConnection>
+        <url>github.com/schrepfler/sportsml-scala</url>
+      </scm>
+
+      <developers>
+        <developer>
+          <id>schrepfler</id>
+          <name>Srdan Srepfler</name>
+          <url>github.com/schrepfler</url>
+        </developer>
+      </developers>
+    }
+
     // scalaxbDispatchVersion in (Compile, scalaxb) := dispatchV
     // scalaxbPackageName in (Compile, scalaxb)     := "org.iptc.sportsml.v3"
     // scalaxbPackageNames in (Compile, scalaxb)    := Map(uri("http://schemas.microsoft.com/2003/10/Serialization/") -> "microsoft.serialization"),
