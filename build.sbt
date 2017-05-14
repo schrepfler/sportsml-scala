@@ -17,8 +17,8 @@ lazy val root = (project in file(".")).
       else Seq(scalaXml, scalaParser)
     }).
   settings(
-    scalaxbDispatchVersion in (Compile, scalaxb) := dispatchV,
-    scalaxbPackageName in (Compile, scalaxb)     := "org.iptc.sportsml.v3"
+    // scalaxbDispatchVersion in (Compile, scalaxb) := dispatchV,
+    // scalaxbPackageName in (Compile, scalaxb)     := "org.iptc.sportsml.v3"
     // scalaxbPackageNames in (Compile, scalaxb)    := Map(uri("http://schemas.microsoft.com/2003/10/Serialization/") -> "microsoft.serialization"),
     // logLevel in (Compile, scalaxb) := Level.Debug
   )
