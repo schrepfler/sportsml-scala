@@ -1,5 +1,5 @@
 lazy val scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.1.0"
-lazy val scalaParser = "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.6"
+lazy val scalaParser = "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.7"
 lazy val dispatchV = "0.12.0"
 lazy val dispatch = "net.databinder.dispatch" %% "dispatch-core" % dispatchV
 
