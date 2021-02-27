@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
 
   // enablePlugins(ScalaxbPlugin).
   settings(inThisBuild(List(
-    scalaVersion  := "2.12.2"
+    scalaVersion  := "2.12.13"
   ))).
   settings(
     sonatypeProfileName := "net.sigmalab",
